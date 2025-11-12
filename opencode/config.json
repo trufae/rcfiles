@@ -1,0 +1,247 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+
+  "mcp": {
+    "r2copilot": {
+      "type": "local",
+      "command": [ "/Users/pancake/prg/r2-copilot/start.sh" ],
+      "enabled": false
+    },
+    "r2mcp": {
+      "type": "local",
+      "command": [
+        "r2pm", "-r", "r2mcp", "-m"
+      ],
+      "enabled": false
+    }
+  },
+
+
+  "provider": {
+    "Ollama": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "Ollama",
+      "options": {
+        "baseURL": "https://ollama.com/v1",
+        "apiKey": "{env:OLLAMA_API_KEY}"
+      },
+      "models": {
+        "gpt-oss:120b": {
+          "name": "gpt-oss:120b"
+        },
+        "deepseek-v3.1:671b": {
+          "name": "deepseek-v3.1:671b"
+        },
+        "qwen3-coder:480b": {
+          "name": "qwen3-coder:480b"
+        },
+        "qwen3-coder:480b": {
+          "name": "qwen3-coder:480b"
+        },
+        "glm-4.6": {
+          "name": "glm-4.6"
+        },
+        "kimi-k2:1t": {
+          "name": "kimi-k2:1t"
+        }
+      }
+    }
+  },
+  "autoupdate": true,
+  "agent": {
+    "pancake": {
+      "description": "Quick development following secure coding practices with maintainability in mind",
+      "model": "gemini-2.5-pro",
+      "prompt": "Follow the rules from AGENTS.md if the file exists. Indent C code with `clang-format-radare2`. Create the best reasoned plan before starting to work in order to solve the suggested task. ( /no_think & Reasoning: Low )"
+    }
+  },
+  "provider": {
+    "google": {
+      "npm": "@ai-sdk/google",
+      "name": "Google Gemini",
+      "options": {
+        "apiKey": "{env:GEMINI_API_KEY}"
+      },
+      "models": {
+        "gemini-2.5-pro": {
+          "name": "Gemini 2.5 Pro"
+        },
+        "gemini-2.0-flash": {
+          "name": "Gemini 2.0 Flash"
+        }
+      }
+    },
+    "OllamaCloud": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "OllamaCloud",
+      "options": {
+        "baseURL": "https://ollama.com/v1",
+        "apiKey": "{env:OLLAMA_API_KEY}"
+      },
+      "models": {
+        "gpt-oss:120b": {
+          "name": "gpt-oss:120b"
+        },
+        "minimax-m2:cloud": {
+          "name": "minimax-m2:cloud"
+        },
+        "deepseek-v3.1:671b": {
+          "name": "deepseek-v3.1:671b"
+        },
+        "qwen3-coder:480b": {
+          "name": "qwen3-coder:480b"
+        },
+        "qwen3-coder:480b": {
+          "name": "qwen3-coder:480b"
+        },
+        "glm-4.6": {
+          "name": "glm-4.6"
+        },
+        "kimi-k2:1t": {
+          "name": "kimi-k2:1t"
+        }
+      }
+    },
+    "thor": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "Thor",
+      "options": {
+        "baseURL": "http://192.168.1.55:11434/v1"
+      },
+      "models": {
+        "qwen3-coder:30b": {
+          "name": "qwen3-coder:30b (OK)"
+        },
+        "firefunction-v2": {
+          "name": "firefunction-v2"
+        },
+        "qwen3:32b": {
+          "name": "qwen3:32b (ok)"
+        },
+        "mistral-nemo": {
+          "name": "mistral-nemo (OK)"
+        },
+        "ishumilin/deepseek-r1-coder-tools:1.5b": {
+          "name": "ishumilin/deepseek-r1-coder-tools:1.5b (OK)"
+        },
+        "llama3-groq-tool-use:70b": {
+          "name": "llama3-groq-tool-use:70b (OK)"
+        },
+        "llama3-groq-tool-use:70b": {
+          "name": "llama3-groq-tool-use:70b (OK)"
+        },
+        "mistral:7b-instruct": {
+          "name": "mistral:7b-instruct (OK)"
+        },
+        "llama3-groq-tool-use": {
+          "name": "llama3-groq-tool-use"
+        },
+        "ishumilin/deepseek-r1-coder-tools:32b": {
+          "name": "ishumilin/deepseek-r1-coder-tools:32b"
+        },
+        "mychen76/phi4_cline_roocode:14b": {
+          "name": "mychen76/phi4_cline_roocode:14b"
+        },
+        "mychen76/GLM-4-32B-cline_roocode:Q4": {
+          "name": "mychen76/GLM-4-32B-cline_roocode:Q4"
+        },
+        "gpt-oss:20b": {
+          "name": "gpt-oss:20b (OK)"
+        },
+        "gpt-oss:120b": {
+          "name": "gpt-oss:120b (OK)"
+        },
+        "phi4:latest": {
+          "name": "phi4:latest"
+        },
+        "MichelRosselli/GLM-4.5-Air:Q2_K": {
+          "name": "MichelRosselli/GLM-4.5-Air:Q2_K (OK)"
+        },
+        "deepseek-coder:33b": {
+          "name": "deepseek-coder:33b (OK)"
+        }
+      }
+    },
+    "eullama": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "EUllama",
+      "options": {
+        "baseURL": "{env:EULLAMA_BASEURL}"
+      },
+      "models": {
+        "huihui_ai/kimi-k2": {
+          "name": "huihui_ai/kimi-k2"
+        },
+        "MHKetbi/Qwen2.5-Coder-32B-Instruct:q4_K_S": {
+          "name": "MHKetbi/Qwen2.5-Coder-32B-Instruct:q4_K_S"
+        },
+	"granite-code:34b": {
+          "name": "granite-code:34b"
+        },
+        "qwen2.5-coder:32b": {
+          "name": "qwen2.5-coder:32b"
+        },
+        "gemma3:27b": {
+          "name": "gemma3:27b"
+        },
+        "gpt-oss:20b": {
+          "name": "gpt-oss:20b"
+        },
+        "gpt-oss:120b": {
+          "name": "gpt-oss:120b"
+        },
+        "richardyoung/qwen3-coder:q4-k-m": {
+          "name": "richardyoung/qwen3-coder:q4-k-m"
+        },
+        "deepseek-coder-v2:16b": {
+          "name": "deepseek-coder-v2:16b"
+        }
+      }
+    },
+    "ollama": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "Ollama",
+      "options": {
+        "baseURL": "http://127.0.0.1:11434/v1"
+      },
+      "models": {
+        "qwen3:latest": {
+          "name": "qwen3:latest"
+        },
+        "clore/gpt-oss-20b-Q8_0": {
+          "name": "clore/gpt-oss-20b-Q8_0"
+        },
+        "glm-4.6:cloud": {
+          "name": "glm-4.6:cloud"
+        },
+        "gpt-oss:120b-cloud": {
+          "name": "gpt-oss:120b-cloud"
+        },
+        "mcgdj/gpt-oss-6.0b": {
+          "name": "mcgdj/gpt-oss-6.0b"
+        },
+        "gpt-oss:20b": {
+          "name": "gpt-oss:20b"
+        }
+      }
+    },
+    "lmstudio": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "LM Studio (local)",
+      "options": {
+        "baseURL": "http://127.0.0.1:1234/v1"
+      },
+      "models": {
+        "jan-nano-128k": {
+          "name": "jan-nano-128k"
+        },
+        "openai/gpt-oss-20b": {
+          "name": "gpt-oss-20b"
+        },
+        "qwen/qwen3-coder-30b": {
+          "name": "qwen3-coder-30b"
+        }
+      }
+    }
+  }
+}

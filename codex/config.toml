@@ -1,0 +1,17 @@
+# model = "gpt-5"
+# modelreasoningeffort = "minimal"
+
+model = "gpt-oss:20b"
+modelprovider="ollama"
+
+[modelproviders.ollama]
+name="Ollama"
+baseurl="http://192.168.1.55:11434/v1"
+
+[profiles.ollama]
+model="gpt-oss:20b"
+modelprovider="ollama"
+
+[profiles.devstral]
+model="devstral"
+model_provider="ollama"
