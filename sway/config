@@ -1,0 +1,42 @@
+# output "*" bg /path/to/image fill
+input type:touchpad {
+	tap enabled
+	natural_scroll enabled
+}
+input type:mouse {
+	tap enabled
+	natural_scroll enabled
+}
+input type:keyboard {
+	xkb_layout es,us
+	xkb_options grp:rctrl_toggle
+	repeat_delay 250
+	repeat_rate 30
+}
+#input "2321:21128:HTIX5288:00_0911:5288_Mouse" {
+#	tap enabled
+#	natural_scroll enabled
+#}
+output name scale 2
+
+include /etc/sway/config
+
+output * bg /home/pancake/bg.png fill
+
+set $term foot -t xterm-256color
+
+bindsym $mod+o exec firefox
+bindsym $mod+t exec $term
+bindsym $mod+d exec $term
+# bindsym $mod+Shift+Return exec $term
+bindsym XF86MonBrightnessDown exec light -U 10
+bindsym XF86MonBrightnessUp exec light -A 10
+bindsym XF86AudioRaiseVolume exec amixer set Master 10%+
+bindsym XF86AudioLowerVolume exec amixer set Master 10%-
+bindsym XF86AudioMute exec amixer set Master toggle
+
+exec $term
+exec swayidle -w \
+	timeout 1800 'swaylock -f' \
+	timeout 1805 'swaymsg "output * power off"' \
+	resume 'swaymsg "output * power on"'
