@@ -1,17 +1,41 @@
 # model = "gpt-5"
 # modelreasoningeffort = "minimal"
+disable_response_storage = true
+show_reasoning_content = true
+model = "gpt-5-codex"
+model_reasoning_effort = "medium"
 
-model = "gpt-oss:20b"
-modelprovider="ollama"
+[model_providers.thor]
+name = "thor"
+base_url="http://192.168.1.55:11434/v1"
 
-[modelproviders.ollama]
-name="Ollama"
-baseurl="http://192.168.1.55:11434/v1"
+[model_providers.local]
+name = "local"
+base_url = "http://localhost:11434/v1"
 
-[profiles.ollama]
+## profiles
+
+[profiles.gptoss]
 model="gpt-oss:20b"
-modelprovider="ollama"
+model_provider = "thor"
 
 [profiles.devstral]
-model="devstral"
-model_provider="ollama"
+model = "devstral"
+model_provider = "thor"
+
+[profiles.qwen3]
+model = "qwen3-coder"
+model_provider = "thor"
+
+[profiles.granite3.3_2b]
+model = "granite3.3:2b"
+model_provider = "thor"
+
+[profiles.granite3.3]
+model = "granite3.3"
+model_provider = "thor"
+
+
+[profiles.oss]
+model = "gpt-oss"
+model_provider = "local"
