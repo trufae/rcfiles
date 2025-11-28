@@ -12,3 +12,5 @@ sudo ln -fs $PWD/target/release/codex /usr/local/bin/codex-rs
 ```bash
 codex --profile devstral
 ```
+
+The prompt.qwen.md works well with devstral and qwen!

@@ -7,7 +7,7 @@ model_reasoning_effort = "medium"
 
 [model_providers.thor]
 name = "thor"
-base_url="http://192.168.1.55:11434/v1"
+base_url="http://192.168.1.54:11434/v1"
 
 [model_providers.local]
 name = "local"
@@ -18,14 +18,17 @@ base_url = "http://localhost:11434/v1"
 [profiles.gptoss]
 model="gpt-oss:20b"
 model_provider = "thor"
+model_reasoning_effort = "low"
 
 [profiles.devstral]
 model = "devstral"
 model_provider = "thor"
+experimental_instructions_file = "/Users/pancake/.codex/prompt.md"
 
 [profiles.qwen3]
 model = "qwen3-coder"
 model_provider = "thor"
+experimental_instructions_file = "/Users/pancake/.codex/prompt.md"
 
 [profiles.granite3.3_2b]
 model = "granite3.3:2b"
@@ -35,7 +38,14 @@ model_provider = "thor"
 model = "granite3.3"
 model_provider = "thor"
 
-
 [profiles.oss]
 model = "gpt-oss"
 model_provider = "local"
+
+## mcps
+
+# [mcp_servers.wttr]
+# command = "mai-mcp-wttr"
+
+# [mcp_servers.r2mcp]
+#command = "r2mcp"
