@@ -1,0 +1,18 @@
+# Install qwen-cli
+
+on macOS
+
+```
+brew install qwen-code
+```
+
+on Linux
+
+```
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
+nvm install 20
+```
+
+## Login
+
+Login with qwen or take one of the settings files from this directory

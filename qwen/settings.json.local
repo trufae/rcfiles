@@ -1,0 +1,21 @@
+{
+  "model": {
+    "name": "gpt-oss:20b",
+    "_name": "qwen3:32"
+  },
+  "stream": false,
+  "security": {
+    "auth": {
+      "selectedType": "openai",
+      "apiKey": "ollama",
+      "baseUrl": "http://127.0.0.1:11434/v1"
+    }
+  },
+  "mcpServer": {
+    "r2mcp": {
+      "command": "r2pm",
+      "args": ["-r", "r2mcp"]
+    }
+  },
+  "$version": 2
+}

@@ -1,0 +1,14 @@
+{
+  "model": {
+    "name": "big-pickle",
+    "_name": "glm-4.7-free"
+  },
+  "security": {
+    "auth": {
+      "selectedType": "openai",
+      "apiKey": "yoursecret",
+      "baseUrl": "https://opencode.ai/zen/v1"
+    }
+  },
+  "$version": 2
+}

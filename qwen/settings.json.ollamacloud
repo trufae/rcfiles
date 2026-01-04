@@ -1,0 +1,19 @@
+{
+  "model": {
+    "name": "glm-4.6:cloud",
+    "_name": "qwen3-next:80b",
+    "_name": "kimi-k2-thinking",
+    "_name": "minimax-m2:cloud",
+    "_name": "deepseek-v3.2",
+    "_name": "devstral-2:123b",
+    "_name": "gemini-3-pro-preview"
+  },
+  "security": {
+    "auth": {
+      "selectedType": "openai",
+      "apiKey": "yoursecret",
+      "baseUrl": "https://ollama.com/v1"
+    }
+  },
+  "$version": 2
+}
