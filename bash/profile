@@ -1,0 +1,2 @@
+alias locdiff='echo $((`git diff 2>/dev/null | grep ^+|wc -l`-`git diff 2> /dev/null| grep ^-|wc -l`))'
+alias ssh-loadkeys='eval $(ssh-agent);ssh-add $HOME/.ssh/*'
