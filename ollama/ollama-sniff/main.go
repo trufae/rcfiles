@@ -11,6 +11,7 @@ import (
 	"net/http"
 	"strings"
 	"sync"
+	"time"
 )
 
 var listenAddr = flag.String("listen", ":11435", "address to listen on")
@@ -56,6 +57,9 @@ func proxyHandler(w http.ResponseWriter, r *http.Request) {
 	client := r.RemoteAddr
 	color := getColor(client)
 	reset := "\033[0m"
+
+	// Log HTTP request method and path
+	log.Printf("[%s] %s %s", client, r.Method, r.URL.Path)
 
 	// Read request body
 	body, err := io.ReadAll(r.Body)
@@ -118,6 +122,7 @@ func proxyHandler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	// Do request
+	startTime := time.Now()
 	resp, err := http.DefaultClient.Do(req2)
 	if err != nil {
 		http.Error(w, err.Error(), 500)
@@ -169,9 +174,11 @@ func proxyHandler(w http.ResponseWriter, r *http.Request) {
 			tokens := totalLen / 4
 			fmt.Printf("Length: %d chars, Tokens: ~%d\n", totalLen, tokens)
 		}
+		fmt.Printf("Time: %s\n", time.Since(startTime))
 	} else {
 		// Non-streaming response
 		respBody, err := io.ReadAll(resp.Body)
+		duration := time.Since(startTime)
 		if err != nil {
 			log.Printf("Error reading response: %v", err)
 			return
@@ -185,14 +192,17 @@ func proxyHandler(w http.ResponseWriter, r *http.Request) {
 					fmt.Printf("%s[server -> %s]%s %s\n", color, client, reset, content)
 					tokens := len(content) / 4
 					fmt.Printf("Length: %d chars, Tokens: ~%d\n", len(content), tokens)
+					fmt.Printf("Time: %s\n", duration)
 				} else {
 					fmt.Printf("%s[server -> %s]%s %s\n", color, client, reset, string(respBody))
+					fmt.Printf("Time: %s\n", duration)
 				}
 			} else {
 				fmt.Printf("%s[server -> %s]%s %s\n", color, client, reset, string(respBody))
+				fmt.Printf("Time: %s\n", duration)
 			}
 		} else {
-			fmt.Printf("%s[server -> %s]%s %s\n", color, client, reset, string(respBody))
+			fmt.Printf("%s[server -> %s]%s %s (Time: %s)\n", color, client, reset, string(respBody), duration)
 		}
 		w.Write(respBody)
 	}
