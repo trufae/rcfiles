@@ -1,0 +1,28 @@
+{
+  "model": {
+    "name": "glm-4.7",
+    "_name": "kimi-k2:1t",
+  },
+  "security": {
+    "auth": {
+      "selectedType": "openai",
+      "apiKey": "___";
+      "baseUrl": "https://ollama.com/v1"
+    }
+  },
+  "reasoning": {
+    "effort": "imedium"
+  },
+  "ui": {
+    "theme": "Qwen Dark"
+  },
+  "$version": 2,
+  "mcpServers": {
+    "web": {
+      "command": "mai-mcp-websearch",
+      "args": [
+        "-searxng"
+      ]
+    }
+  }
+}
