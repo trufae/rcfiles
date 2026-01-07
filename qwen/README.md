@@ -16,3 +16,19 @@ nvm install 20
 ## Login
 
 Login with qwen or take one of the settings files from this directory
+
+## Environment
+
+```bash
+export QWEN_SYSTEM_MD=/path/to/system_prompt.txt
+```
+
+## Reasoning
+
+```json
+{
+    "reasoning": {
+        "effort": "low"
+    }
+}
+```
