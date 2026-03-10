@@ -1,0 +1,13 @@
+focus-follows-mouse=true
+background=black
+font-family=IBM Plex Mono
+keybind = super+h=goto_split:left
+keybind = super+j=goto_split:bottom
+keybind = super+k=goto_split:top
+keybind = super+l=goto_split:right
+window-padding-color=extend
+window-padding-x = 2
+split-divider-color=#FFA500
+keybind = super+up=increase_font_size:1
+keybind = super+down=decrease_font_size:1
+
