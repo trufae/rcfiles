@@ -11,6 +11,7 @@ on Linux
 ```
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
 nvm install 20
+npm install -g @qwen-code/qwen-code@latest
 ```
 
 ## Login
