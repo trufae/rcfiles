@@ -1,5 +1,7 @@
+---
 name: aitodo
-description: Resolve the tasks described in the comments
+description: Resolve tasks described in `AITODO` comments by implementing the required code changes and removing the comments.
+---
 
 When this skill is used: (Read the `AGENTS.md` for project guidelines)
 

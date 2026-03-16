@@ -1,5 +1,7 @@
+---
 name: aiclean
-description: Clean and refactor code with focus on reduce lines of code
+description: Clean and refactor code with a focus on reducing lines of code while improving readability.
+---
 
 When this skill is used: (Read the `AGENTS.md` for project guidelines)
 
