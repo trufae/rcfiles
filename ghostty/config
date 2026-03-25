@@ -10,4 +10,4 @@ window-padding-x = 2
 split-divider-color=#FFA500
 keybind = super+up=increase_font_size:1
 keybind = super+down=decrease_font_size:1
-
+copy-on-select=clipboard
