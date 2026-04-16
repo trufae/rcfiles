@@ -49,4 +49,12 @@ map <C-U> <C-W>j
 map <C-I> <C-W>k
 map <C-O> <C-W>l
 
+" move lines up/down with alt+j/k
+nnoremap <C-S-j> :m .+1<CR>==
+nnoremap <C-S-k> :m .-2<CR>==
+inoremap <C-S-j> <ESC>:m .+1<CR>==gi
+inoremap <C-S-k> <ESC>:m .-2<CR>==gi
+vnoremap <C-S-j> :m '>+1<CR>gv=gv
+vnoremap <C-S-k> :m '<-2<CR>gv=gv
+
 au BufRead,BufNewFile *.v set filetype=go
